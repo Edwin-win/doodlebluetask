@@ -21,7 +21,7 @@ module.exports = {
     } else {
       return res.send({
         status: 0,
-        msg: "Admin only can upload the inventory,Unauthorized used",
+        msg: "Admin only can upload the inventory,Unauthorized user",
         data: [],
       });
     }
