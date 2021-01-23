@@ -1,0 +1,25 @@
+{
+  "name": "ivenu",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "PaladinSoftwares",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^2.6.2",
+    "bcrypt": "^5.0.0",
+    "body-parser": "^1.18.3",
+    "csv-parser": "^3.0.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.16.4",
+    "express-fileupload": "^1.1.6",
+    "jsonwebtoken": "^8.5.1",
+    "mysql": "^2.16.0",
+    "nodemailer": "^5.1.1",
+    "nodemon": "^1.18.10",
+    "uuid": "^8.3.0"
+  }
+}

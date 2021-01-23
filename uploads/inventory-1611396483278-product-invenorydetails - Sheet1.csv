@@ -1,0 +1,5 @@
+product_unique_code,product_name,product_category,product_description,product_qty,product_amount,product_status
+PR-1,Tv,1,pr des,3,45000,1
+PR-2,Fridge,1,pr des,5,25000,1
+PR-3,Laptop,1,pr des,6,70000,1
+PR-4,Fan,1,pr des,3,4000,1
