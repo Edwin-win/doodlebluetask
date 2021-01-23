@@ -1,0 +1,382 @@
+{
+	"info": {
+		"_postman_id": "d0691d30-f273-49ac-8df1-2eae8d17943b",
+		"name": "Doodleblue Task",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"auth": {
+							"type": "bearer"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userEmail\":\"edwin@gmail.com\",\n    \"password\":\"password\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{doodleblueTask}}user/userLogin",
+							"host": [
+								"{{doodleblueTask}}user"
+							],
+							"path": [
+								"userLogin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "registration",
+					"request": {
+						"auth": {
+							"type": "bearer"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userType\":3,\n    \"userName\":\"Arjun\",\n    \"userPhoneNo\":7598957371,\n    \"userEmail\":\"arjun@gmail.com\",\n    \"userPassword\":\"password\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{doodleblueTask}}user/userRegistration",
+							"host": [
+								"{{doodleblueTask}}user"
+							],
+							"path": [
+								"userRegistration"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "userDetails",
+					"request": {
+						"auth": {
+							"type": "bearer"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJUeXBlIjoxLCJpYXQiOjE2MTE0MDE5MjYsImV4cCI6MTYxMTQxOTkyNn0.OODDRfBFzUCkzp5GKyXAFcyqiQS8XrJv8RxDkGnw2K0"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{doodleblueTask}}user/userDetails",
+							"host": [
+								"{{doodleblueTask}}user"
+							],
+							"path": [
+								"userDetails"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Inventory",
+			"item": [
+				{
+					"name": "inventoryUpload",
+					"request": {
+						"auth": {
+							"type": "bearer"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjcsInVzZXJUeXBlIjozLCJpYXQiOjE2MTE0MDUzNjIsImV4cCI6MTYxMTQyMzM2Mn0.AUYehQ4W1ySyZ3o_O1MSaYGdljIQYPsMctl6J-2dTNg"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "inventoryFile",
+									"type": "file",
+									"src": "/home/edwin/Downloads/product-invenorydetails - Sheet1 (1).csv"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{doodleblueTask}}inventory/inventoryUpload",
+							"host": [
+								"{{doodleblueTask}}inventory"
+							],
+							"path": [
+								"inventoryUpload"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "createOrder",
+					"request": {
+						"auth": {
+							"type": "bearer"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjcsInVzZXJUeXBlIjozLCJpYXQiOjE2MTE0MDUzNjIsImV4cCI6MTYxMTQyMzM2Mn0.AUYehQ4W1ySyZ3o_O1MSaYGdljIQYPsMctl6J-2dTNg"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"orderTotalAmount\":1000,\n    \"orderPaymentMode\":\"cash\",\n    \"orderCollectAmount\":1000,\n    \"OrderList\":[\n        {\n            \"productId\":1,\n            \"productQty\":2,\n            \"productAmount\":100\n\n        },\n        {\n            \"productId\":2,\n            \"productQty\":1,\n            \"productAmount\":100\n\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{doodleblueTask}}order/createOrder",
+							"host": [
+								"{{doodleblueTask}}order"
+							],
+							"path": [
+								"createOrder"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "editOrder",
+					"request": {
+						"auth": {
+							"type": "bearer"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjcsInVzZXJUeXBlIjozLCJpYXQiOjE2MTE0MDUzNjIsImV4cCI6MTYxMTQyMzM2Mn0.AUYehQ4W1ySyZ3o_O1MSaYGdljIQYPsMctl6J-2dTNg"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"orderStatus\":2,\n    \"orderId\":14\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{doodleblueTask}}order/editOrder",
+							"host": [
+								"{{doodleblueTask}}order"
+							],
+							"path": [
+								"editOrder"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cancelOrder",
+					"request": {
+						"auth": {
+							"type": "bearer"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjcsInVzZXJUeXBlIjozLCJpYXQiOjE2MTE0MDUzNjIsImV4cCI6MTYxMTQyMzM2Mn0.AUYehQ4W1ySyZ3o_O1MSaYGdljIQYPsMctl6J-2dTNg"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"orderId\":14\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{doodleblueTask}}order/cancelOrder",
+							"host": [
+								"{{doodleblueTask}}order"
+							],
+							"path": [
+								"cancelOrder"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "orderDetailsAndSearch",
+					"request": {
+						"auth": {
+							"type": "bearer"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjcsInVzZXJUeXBlIjozLCJpYXQiOjE2MTE0MDUzNjIsImV4cCI6MTYxMTQyMzM2Mn0.AUYehQ4W1ySyZ3o_O1MSaYGdljIQYPsMctl6J-2dTNg"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"searchOption\":false,\n    \"searchContent\":\"arju\",\n    \"nameSorting\":false,\n    \"nameSortOrder\":\"ASC\",\n    \"costSorting\":false,\n    \"costSortOrder\":\"DESC\",\n    \"statusSorting\":false,\n    \"statusSortOrder\":\"ASC\",\n    \"limit\":3,\n    \"pageno\":1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{doodleblueTask}}order/orderDetailsAndSearch",
+							"host": [
+								"{{doodleblueTask}}order"
+							],
+							"path": [
+								"orderDetailsAndSearch"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "orderedProductCountBasedOnDate",
+					"request": {
+						"auth": {
+							"type": "bearer"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjcsInVzZXJUeXBlIjozLCJpYXQiOjE2MTE0MDUzNjIsImV4cCI6MTYxMTQyMzM2Mn0.AUYehQ4W1ySyZ3o_O1MSaYGdljIQYPsMctl6J-2dTNg"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"selectedDate\":\"2021-01-23\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{doodleblueTask}}order/orderedProductCountBasedOnDate",
+							"host": [
+								"{{doodleblueTask}}order"
+							],
+							"path": [
+								"orderedProductCountBasedOnDate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "customersListBasedOnNumberOfProductsPurchased",
+					"request": {
+						"auth": {
+							"type": "bearer"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjcsInVzZXJUeXBlIjozLCJpYXQiOjE2MTE0MDUzNjIsImV4cCI6MTYxMTQyMzM2Mn0.AUYehQ4W1ySyZ3o_O1MSaYGdljIQYPsMctl6J-2dTNg"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{doodleblueTask}}order/customersListBasedOnNumberOfProductsPurchased",
+							"host": [
+								"{{doodleblueTask}}order"
+							],
+							"path": [
+								"customersListBasedOnNumberOfProductsPurchased"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
